@@ -1,0 +1,29 @@
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+
+  &__img {
+    width: 100%;
+    min-height: inherit;
+    object-fit: cover;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    translate: 0 -50%;
+    backdrop-filter: blur(15px);
+    padding: 10px 20px;
+  }
+
+  &__title {
+    font-family: var(--ff-primary);
+    color: var(--clr-base-400);
+  }
+}

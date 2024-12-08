@@ -1,0 +1,56 @@
+@use '../utils/' as utils;
+
+.footer {
+  background-color: var(--clr-neutral-1000);
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: utils.pxToRem(18);
+  }
+
+  nav {
+    --gap: 10px 50px;
+
+    display: inherit;
+    gap: var(--gap);
+  }
+
+  &__nav-list {
+    display: inherit;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--gap);
+
+    a {
+      color: var(--clr-neutral-0);
+    }
+
+    i {
+      font-size: var();
+      color: var(--clr-base-450);
+    }
+  }
+  
+  &__social {
+    display: inherit;
+    gap: 15px;
+
+    a {
+      color: var(--clr-base-450);
+    }
+  }
+
+  &__copyright {
+    text-align: center;
+    font-size: 1.125rem;
+
+    span {
+      color: var(--clr-base-400);
+      font-weight: var(--fw-bold);
+    }
+  }
+}
