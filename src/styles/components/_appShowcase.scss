@@ -1,0 +1,35 @@
+.app-showcase {
+  &__title {
+    background-color: var(--clr-neutral-1000);
+    padding-block: 30px;
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  &__cards, &__card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+  }
+
+  &__cards {
+    margin-block: 40px;
+  }
+
+  &__card {
+    flex-direction: column;
+    max-width: 350px;
+  }
+
+  &__card-title {
+    font-size: 1.25rem;
+    font-family: var(--ff-primary);
+    color: var(--clr-base-300);
+
+  }
+
+  &__card-description {
+    text-align: center;
+  }
+}
