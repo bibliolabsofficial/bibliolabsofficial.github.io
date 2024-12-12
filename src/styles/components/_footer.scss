@@ -27,6 +27,7 @@
 
     a {
       color: var(--clr-neutral-0);
+      transition: color var(--transition-time-regular);
 
       &:hover {
         color: var(--clr-base-300);
@@ -45,6 +46,7 @@
 
     a {
       color: var(--clr-base-450);
+      transition: color var(--transition-time-regular);
 
       &:hover {
         color: var(--clr-base-400);    
