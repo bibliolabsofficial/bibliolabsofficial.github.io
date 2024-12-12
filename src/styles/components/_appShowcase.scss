@@ -1,9 +1,11 @@
+@use '../utils/' as utils; 
+
 .app-showcase {
   &__title {
+    @include utils.fluid-size(1.5rem, 2rem);
     background-color: var(--clr-neutral-1000);
     padding-block: 30px;
     text-align: center;
-    font-size: 2rem;
   }
 
   &__cards, &__card {
@@ -23,10 +25,9 @@
   }
 
   &__card-title {
-    font-size: 1.25rem;
+    @include utils.fluid-size(1rem, 1.25rem);
     font-family: var(--ff-primary);
     color: var(--clr-base-300);
-
   }
 
   &__card-description {
