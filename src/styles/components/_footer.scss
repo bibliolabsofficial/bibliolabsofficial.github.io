@@ -27,6 +27,10 @@
 
     a {
       color: var(--clr-neutral-0);
+
+      &:hover {
+        color: var(--clr-base-400);
+      }
     }
 
     i {
@@ -41,6 +45,10 @@
 
     a {
       color: var(--clr-base-450);
+
+      &:hover {
+        color: var(--clr-base-400);    
+      }
     }
   }
 
