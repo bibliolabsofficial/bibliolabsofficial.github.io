@@ -103,11 +103,11 @@
     &.active {
       color: var(--clr-base-400);
       font-weight: var(--fw-bold);
-      border-bottom: var(--border-width-regular) var(--border-base-style) var(--clr-base-400);
     }
 
     &:hover, &:active {
       color: var(--clr-base-400);
+      border-bottom: var(--border-width-regular) var(--border-base-style) var(--clr-base-400);
     }
   }
 
