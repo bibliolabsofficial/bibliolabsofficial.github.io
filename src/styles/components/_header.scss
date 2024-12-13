@@ -99,6 +99,7 @@
     color: var(--clr-neutral-0);
     padding: 5px;
     transition: color var(--transition-time-fast);
+    border-bottom: var(--border-width-regular) var(--border-base-style) var(--clr-base-400);
 
     &.active {
       color: var(--clr-base-400);
