@@ -31,6 +31,7 @@
   }
 
   &__card-description {
+    @include utils.fluid-size(0.85rem, 1rem);
     text-align: center;
   }
 }
