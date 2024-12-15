@@ -1,8 +1,9 @@
+@use '../utils/' as utils;
+
 .hero {
   min-height: 100vh; // Fallback for browsers that don't support svh
-  
+
   min-height: 100svh;
-  width: 100%;
   background-image: url('../../../images/the-art-of-war.jpg');
   background-size: cover;
   background-position: 42%;
@@ -19,20 +20,40 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+    width: 50%;
     max-width: 400px;
+    padding: 10px 20px;
+    background-color: var(--clr-neutral-1000-alpha-400);
+    border-radius: 10px;
     position: absolute;
     top: 50%;
-    left: 10%;
-    translate: 0 -50%;
-    padding: 10px 20px;
+    left: 10px;
+    right: 50%;
+    transform: translateY(-50%);
+
+    @media (max-width: 48rem) {
+      width: 75%;
+      left: 0;
+      right: 0;
+    }
   }
 
   &__title {
+    @include utils.fluid-size(1rem, 1.5rem, font-size);
     font-family: var(--ff-primary);
     color: var(--clr-base-400);
   }
 
   @media (min-width: 48rem) {
     background-position: 25%;
+  }
+
+  &__subtitle {
+
+  }
+
+  &__description {
+    @include utils.fluid-size(0.8rem, 1rem, font-size);
+    color: var(--clr-neutral-200);
   }
 }
