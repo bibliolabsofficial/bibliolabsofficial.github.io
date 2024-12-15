@@ -1,12 +1,6 @@
 export default function Hero() {
   return (
     <section className="hero">
-      <img
-        className='hero__img'
-        src="../../../images/the-art-of-war.jpg"
-        alt="the art of war book cover"
-      />
-
       <div className="hero__wrapper | wrapper">
         <h2 className="hero__title">The Art of War</h2>
         <h3 className="hero__subtitle">Sun Tzu</h3>

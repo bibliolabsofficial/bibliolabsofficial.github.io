@@ -54,7 +54,7 @@ export default function Header() {
           </div>
         </div>
 
-        <nav>
+        <nav aria-label="primary navigation">
           <ul className='header__nav-list'>
             <li className='header__nav-list-item'>
               <a href="/" className='header__link | active'>Home</a>
@@ -72,6 +72,11 @@ export default function Header() {
               <a href="#" className='header__link'>Support us</a>
             </li>
           </ul>
+
+          <button className="header__hamburger-menu closed" aria-label="main navigation menu"
+            aria-controls="primary-navigation" aria-expanded="false">
+            <i className="fa fa-bars" aria-hidden="true"></i>
+          </button>
         </nav>
       </div>
 

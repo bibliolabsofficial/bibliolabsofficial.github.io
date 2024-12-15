@@ -1,9 +1,13 @@
 .hero {
+  background-image: url('../../../images/the-art-of-war.jpg');
+  background-size: cover;
+  background-position: 42%;
   position: relative;
   width: 100%;
   min-height: 100vh;
 
   &__img {
+    background-position:left;
     width: 100%;
     min-height: inherit;
     object-fit: cover;
@@ -18,12 +22,16 @@
     top: 50%;
     left: 10%;
     translate: 0 -50%;
-    backdrop-filter: blur(15px);
+
     padding: 10px 20px;
   }
 
   &__title {
     font-family: var(--ff-primary);
     color: var(--clr-base-400);
+  }
+
+  @media (min-width: 48rem) {
+    background-position: 25%;
   }
 }

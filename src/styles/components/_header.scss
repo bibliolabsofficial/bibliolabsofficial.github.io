@@ -23,10 +23,10 @@
   }
 
   &__branding {
+    @include utils.fluid-size(0.85rem, 1.5rem, gap);
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 25px;
   }
 
   &__title-wrapper {
@@ -53,8 +53,7 @@
   }
 
   h1 {
-    @include utils.fluid-size(1.125rem, 1.875rem);
-    
+    @include utils.fluid-size(1rem, 1.875rem, font-size);
     font-family: var(--ff-primary);
     font-weight: var(--fw-regular);
     color: var(--clr-base-400);
@@ -70,8 +69,7 @@
   }
 
   h2 {
-    @include utils.fluid-size(0.625rem, 0.875rem);
-
+    @include utils.fluid-size(0.6rem, 0.875rem, font-size);
     width: 100%;
     padding-inline-end: 10px;
     padding-block-start: 5px;
@@ -84,7 +82,7 @@
   }
 
   &__logo {
-    width: utils.pxToRem(50);
+    @include utils.fluid-size(2.5rem, 3.125rem, width);
     height: auto;
     border-radius: 50%;
     border: var(--border-width-regular) var(--border-base-style) var(--clr-base-500);
@@ -92,8 +90,7 @@
   };
 
   &__link {
-    @include utils.fluid-size(0.75rem, 1rem);
-
+    @include utils.fluid-size(0.75rem, 1rem, font-size);
     font-family: var(--ff-primary);
     font-weight: var(--fw-regular);
     color: var(--clr-neutral-0);
@@ -106,8 +103,9 @@
       border-bottom: var(--border-width-regular) var(--border-base-style) var(--clr-base-400);
     }
 
-    &:hover, &:active {
+    &:hover {
       color: var(--clr-base-400);
+      border-bottom: var(--border-width-regular) var(--border-base-style) var(--clr-base-400);
     }
   }
 
@@ -115,10 +113,26 @@
     display: flex;
     gap: 25px;
     list-style-type: none;
+
+    @media (max-width: 48rem) {
+      display: none;
+    }
   }
 
   &__nav-list-item {
     font-weight: var(--fw-bold);
+  }
+
+  &__hamburger-menu {
+    display: none;
+    font-size: 1.75rem;
+    background-color: transparent;
+    border: none;
+    color: var(--clr-base-400);
+
+    @media (max-width: 48rem) {
+      display: inline;;
+    }
   }
 
   &__controls {
@@ -139,7 +153,7 @@
   &__toggle-header-visible, &__lock-header {
     background-color: var(--clr-neutral-1000);
     color: var(--clr-neutral-500);
-    border-radius: 50%;
+    border-radius: 40%;
     border: var(--border-width-regular) var(--border-base-style) var(--clr-neutral-700);
     width: utils.pxToRem(32);
     aspect-ratio: 1;
