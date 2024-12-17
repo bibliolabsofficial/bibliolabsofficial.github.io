@@ -44,16 +44,16 @@
     color: var(--clr-base-400);
   }
 
-  @media (min-width: 48rem) {
-    background-position: 25%;
-  }
-
   &__subtitle {
-
+    @include utils.fluid-size(0.9rem, 1.25rem, font-size);
   }
 
   &__description {
     @include utils.fluid-size(0.8rem, 1rem, font-size);
     color: var(--clr-neutral-200);
+  }
+
+  @media (min-width: 48rem) {
+    background-position: 25%;
   }
 }

@@ -9,11 +9,24 @@ export default function Header() {
   const [headerVisible, setHeaderVisible] = useState(true);
   const [headerLocked, setHeaderLocked] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
+  const [menuOpened, setMenuOpened] = useState(false);
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, [scrollPosition, headerLocked]);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(max-width: 48rem)');
+    const menu = document.querySelector('.header__nav-list');
+
+    if (!menuOpened && mediaQuery.matches) {
+      menu?.setAttribute('inert', '');
+      return;
+    }
+
+    menu?.removeAttribute('inert');
+  }, [menuOpened]);
   // ------------------------------------------------
 
   // ------------------ Functions -------------------
@@ -36,6 +49,17 @@ export default function Header() {
   function toggleHeaderLocked() {
     if (!headerLocked) setHeaderVisible(!headerVisible);
   }
+
+  // Toggles hamburger visibility
+  function toggleMenuVisibility() {
+    setMenuOpened(!menuOpened);
+    lockBodyScrolling();
+  }
+
+  // Locks body scrolling
+  function lockBodyScrolling() {
+    document.body.classList.toggle('scroll-y-locked');
+  }
   // ------------------------------------------------
 
   return (
@@ -54,8 +78,21 @@ export default function Header() {
           </div>
         </div>
 
-        <nav aria-label="primary navigation">
-          <ul className='header__nav-list'>
+        <nav>
+          <button
+            className="header__hamburger-menu"
+            aria-controls="primary-navigation"
+            aria-expanded={menuOpened}
+            onClick={toggleMenuVisibility}
+          >
+            <span className='sr-only'>menu</span>
+            <span className="fa fa-bars" aria-hidden="true"></span>
+          </button>
+
+          <ul
+            className='header__nav-list'
+            id='primary-navigation'
+          >
             <li className='header__nav-list-item'>
               <a href="/" className='header__link | active'>Home</a>
             </li>
@@ -72,11 +109,6 @@ export default function Header() {
               <a href="#" className='header__link'>Support us</a>
             </li>
           </ul>
-
-          <button className="header__hamburger-menu closed" aria-label="main navigation menu"
-            aria-controls="primary-navigation" aria-expanded="false">
-            <i className="fa fa-bars" aria-hidden="true"></i>
-          </button>
         </nav>
       </div>
 
