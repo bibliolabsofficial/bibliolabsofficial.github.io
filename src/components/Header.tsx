@@ -67,7 +67,7 @@ export default function Header() {
   // Toggles hamburger visibility
   function toggleMenuVisibility() {
     setMenuOpened(!menuOpened);
-    lockBodyScrolling();
+    toggleBodyScrollingEnabled();
   }
 
   // Locks body scrolling
