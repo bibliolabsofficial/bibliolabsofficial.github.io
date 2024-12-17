@@ -12,6 +12,19 @@ export default function Header() {
   const [menuOpened, setMenuOpened] = useState(false);
 
   useEffect(() => {
+    const mediaQuery = window.matchMedia('(max-width: 48rem)');
+
+    function unlockScrolling() {
+      if (!mediaQuery.matches) {
+         document.body.classList.remove('scroll-y-locked');
+      }
+    }
+    
+    window.addEventListener('resize', unlockScrolling);
+    return () => window.removeEventListener('resize', unlockScrolling);
+  }, [])
+
+  useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, [scrollPosition, headerLocked]);
