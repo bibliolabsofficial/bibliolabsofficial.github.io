@@ -16,7 +16,8 @@ export default function Header() {
 
     function unlockScrolling() {
       if (!mediaQuery.matches) {
-         document.body.classList.remove('scroll-y-locked');
+        document.body.classList.remove('scroll-y-locked');
+        setMenuOpened(!menuOpened);
       }
     }
     
@@ -70,8 +71,13 @@ export default function Header() {
   }
 
   // Locks body scrolling
-  function lockBodyScrolling() {
-    document.body.classList.toggle('scroll-y-locked');
+  function toggleBodyScrollingEnabled() {
+    if (menuOpened) {
+      document.body.classList.add('scroll-y-locked');
+      return;
+    }
+
+    document.body.classList.remove('scroll-y-locked');
   }
   // ------------------------------------------------
 
