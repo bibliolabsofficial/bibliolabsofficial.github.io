@@ -37,6 +37,10 @@
     border-radius: 15px;
     box-shadow: 10px 10px 10px var(--clr-neutral-1000-alpha-500);
 
+    img {
+      max-width: 200px;
+    }
+
     @media (max-width: 48rem) {
       max-width: 250px;
     }
