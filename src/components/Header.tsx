@@ -10,38 +10,37 @@ export default function Header() {
   const [headerLocked, setHeaderLocked] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [menuOpened, setMenuOpened] = useState(false);
+  const [isSmallScreen, setIsSmallScreen] = useState(window.matchMedia('(max-width: 48rem)').matches);  // Track media query
+  const mediaQuery = window.matchMedia('(max-width: 48rem)');  // Define media query
+
+  // --------------- Resize and Scroll Effects ---------------
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(mediaQuery.matches);
+    };
+
+    // Watch for resize changes
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia('(max-width: 48rem)');
-
-    /* function unlockScrolling() {
-      if (!mediaQuery.matches) {
-        document.body.classList.remove('scroll-y-locked');
-        setMenuOpened(!menuOpened);
-      }
-    } */
-    
-    window.addEventListener('resize', () => toggleBodyScrollingEnabled(mediaQuery));
-    return () => window.removeEventListener('resize', () => toggleBodyScrollingEnabled(mediaQuery));
-  }, [])
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [scrollPosition, headerLocked]);
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia('(max-width: 48rem)');
     const menu = document.querySelector('.header__nav-list');
 
-    if (!menuOpened && mediaQuery.matches) {
-      menu?.setAttribute('inert', '');
-      return;
+    // Handle inert attribute based on screen size
+    if (menu && isSmallScreen && !menuOpened) {
+      menu.setAttribute('inert', '');
+    } else {
+      menu?.removeAttribute('inert');
     }
 
-    menu?.removeAttribute('inert');
-  }, [menuOpened]);
-  // ------------------------------------------------
+    // Handle body scroll lock based on menu and screen size
+    if (menuOpened && isSmallScreen) {
+      document.body.classList.add('scroll-y-locked');
+    } else {
+      document.body.classList.remove('scroll-y-locked');
+    }
+  }, [menuOpened, isSmallScreen]);
 
   // ------------------ Functions -------------------
   // Handles header visibility on scroll
@@ -49,34 +48,23 @@ export default function Header() {
     const currentScrollPosition = window.scrollY;
 
     if (!headerLocked) setHeaderVisible(currentScrollPosition > scrollPosition);
-
     setScrollPosition(currentScrollPosition);
   }
 
-  // Toggles the header lockd state
+  // Toggles the header locked state
   function toggleHeaderLocked() {
     if (!headerLocked) setHeaderVisible(!headerVisible);
   }
 
-  // Toggles hamburger visibility
+  // Toggles hamburger menu visibility
   function toggleMenuVisibility() {
-    setMenuOpened(!menuOpened);
-    toggleBodyScrollingEnabled();
+    setMenuOpened(prev => !prev);
   }
 
-  // Locks body scrolling
-  function toggleBodyScrollingEnabled(mediaQuery) {
-    if (menuOpened && !mediaQuery.matches) {
-      document.body.classList.add('scroll-y-locked');
-      return;
-    }
-
-    document.body.classList.remove('scroll-y-locked');
-  }
   // ------------------------------------------------
 
   return (
-    <header className={`header ${!headerVisible && 'hidden'}`}>
+    <header className={`header ${!headerVisible ? 'hidden' : ''}`}>
       <div className='header__wrapper | wrapper'>
         <div className="header__branding">
           <img
