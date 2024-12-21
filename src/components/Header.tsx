@@ -34,12 +34,15 @@ export default function Header() {
   useEffect(() => {
     const mediaQuery = window.matchMedia('(max-width: 48rem)');
     const menu = document.querySelector('.header__nav-list');
+    const body = document.body;
 
     if (!menuOpened && mediaQuery.matches) {
+      body.classList.remove('scroll-y-locked');
       menu?.setAttribute('inert', '');
       return;
     }
 
+    body.classList.add('scroll-y-locked');
     menu?.removeAttribute('inert');
   }, [menuOpened]);
   // ------------------------------------------------
