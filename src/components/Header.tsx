@@ -18,7 +18,7 @@ export default function Header() {
     console.log(body);
   
     function unlockScrolling() {
-      if (!mediaQuery.matches && body.classList.includes('scroll-y-locked')) {
+      if (!mediaQuery.matches) {
         body.classList.remove('scroll-y-locked');
         setMenuOpened(false);
       }
