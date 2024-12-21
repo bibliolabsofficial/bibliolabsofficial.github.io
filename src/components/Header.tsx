@@ -13,13 +13,11 @@ export default function Header() {
 
   useEffect(() => {
     const mediaQuery = window.matchMedia('(max-width: 48rem)');
-    setTimeout(() => console.log(mediaQuery.matches), 3000);
-    setTimeout(() => console.log(mediaQuery.matches), 6000);
-
+  
     function unlockScrolling() {
       if (!mediaQuery.matches) {
         document.body.classList.remove('scroll-y-locked');
-        setMenuOpened(!menuOpened);
+        setMenuOpened(false);
       }
     }
     
@@ -50,21 +48,13 @@ export default function Header() {
   function handleScroll() {
     const currentScrollPosition = window.scrollY;
 
-    if (!headerLocked) {
-      if (currentScrollPosition > scrollPosition) {
-        setHeaderVisible(false);
-      } else {
-        setHeaderVisible(true);
-      }
-    }
+    if (!headerLocked) setHeaderVisible(currentScrollPosition > scrollPosition);
 
     setScrollPosition(currentScrollPosition);
   }
 
   // Toggles the header lockd state
-  function toggleHeaderLocked() {
-    if (!headerLocked) setHeaderVisible(!headerVisible);
-  }
+  const toggleHeaderLocked = () => if (!headerLocked) setHeaderVisible(!headerVisible);
 
   // Toggles hamburger visibility
   function toggleMenuVisibility() {
