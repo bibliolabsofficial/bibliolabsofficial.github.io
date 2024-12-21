@@ -14,15 +14,15 @@ export default function Header() {
   useEffect(() => {
     const mediaQuery = window.matchMedia('(max-width: 48rem)');
 
-    function unlockScrolling() {
+    /* function unlockScrolling() {
       if (!mediaQuery.matches) {
         document.body.classList.remove('scroll-y-locked');
         setMenuOpened(!menuOpened);
       }
-    }
+    } */
     
-    window.addEventListener('resize', unlockScrolling);
-    return () => window.removeEventListener('resize', unlockScrolling);
+    window.addEventListener('resize', () => toggleBodyScrollingEnabled(mediaQuery));
+    return () => window.removeEventListener('resize', () => toggleBodyScrollingEnabled(mediaQuery));
   }, [])
 
   useEffect(() => {
