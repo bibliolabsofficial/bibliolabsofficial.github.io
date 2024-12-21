@@ -14,16 +14,17 @@ export default function Header() {
   useEffect(() => {
     const mediaQuery = window.matchMedia('(max-width: 48rem)');
     const body = document.body;
-    
-    function unlockScrolling() {
-      if (!mediaQuery.matches && body.classList.contains('scroll-y-locked')) {
+
+    function toggleScrollYLocked() {
+      if (mediaQuery.matches && menuOpened) {
+        body.classList.add('scroll-y-locked');
+      } else {
         body.classList.remove('scroll-y-locked');
-        setMenuOpened(false);
       }
     }
     
-    window.addEventListener('resize', unlockScrolling);
-    return () => window.removeEventListener('resize', unlockScrolling);
+    window.addEventListener('resize', toggleScrollYLocked);
+    return () => window.removeEventListener('resize', toggleScrollYLocked);
   }, [])
 
   useEffect(() => {
