@@ -66,7 +66,7 @@ export default function Header() {
 
   // Locks body scrolling
   function toggleBodyScrollingEnabled(mediaQuery) {
-    if (menuOpened && mediaQuery.matches) {
+    if (menuOpened && !mediaQuery.matches) {
       document.body.classList.add('scroll-y-locked');
       return;
     }
