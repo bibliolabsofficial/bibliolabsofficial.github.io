@@ -55,7 +55,9 @@ export default function Header() {
   }
 
   // Toggles the header lockd state
-  const toggleHeaderLocked = () => if (!headerLocked) setHeaderVisible(!headerVisible);
+  const toggleHeaderLocked = () => {
+    if (!headerLocked) setHeaderVisible(!headerVisible)
+  };
 
   // Toggles hamburger visibility
   const toggleMenuVisibility = () => setMenuOpened(!menuOpened);
