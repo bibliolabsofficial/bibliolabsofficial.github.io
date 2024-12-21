@@ -15,16 +15,15 @@ export default function Header() {
     const mediaQuery = window.matchMedia('(max-width: 48rem)');
     const body = document.body;
 
-    function toggleScrollYLocked() {
-      if (mediaQuery.matches && menuOpened) {
-        body.classList.add('scroll-y-locked');
-      } else {
+    function unlockBodyScrollY() {
+      if (!mediaQuery.matches) {
         body.classList.remove('scroll-y-locked');
+        setMenuOpened(false);
       }
     }
     
-    window.addEventListener('resize', toggleScrollYLocked);
-    return () => window.removeEventListener('resize', toggleScrollYLocked);
+    window.addEventListener('resize', unlockBodyScrollY);
+    return () => window.removeEventListener('resize', unlockBodyScrollY);
   }, [])
 
   useEffect(() => {
