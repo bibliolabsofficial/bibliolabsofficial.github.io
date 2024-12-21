@@ -101,6 +101,7 @@ export default function Header() {
           <button
             className="header__hamburger-menu"
             aria-controls="primary-navigation"
+            type="button"
             aria-expanded={menuOpened}
             onClick={toggleMenuVisibility}
           >
