@@ -48,13 +48,7 @@ export default function Header() {
   function handleScroll() {
     const currentScrollPosition = window.scrollY;
 
-    if (!headerLocked) {
-      if (currentScrollPosition > scrollPosition) {
-        setHeaderVisible(false);
-      } else {
-        setHeaderVisible(true);
-      }
-    }
+    if (!headerLocked) setHeaderViible(currentScrollPosition > scrollPosition);
 
     setScrollPosition(currentScrollPosition);
   }
@@ -71,8 +65,8 @@ export default function Header() {
   }
 
   // Locks body scrolling
-  function toggleBodyScrollingEnabled() {
-    if (menuOpened) {
+  function toggleBodyScrollingEnabled(mediaQuery) {
+    if (menuOpened && mediaQuery.matches) {
       document.body.classList.add('scroll-y-locked');
       return;
     }
