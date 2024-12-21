@@ -13,6 +13,7 @@ export default function Header() {
 
   useEffect(() => {
     const mediaQuery = window.matchMedia('(max-width: 48rem)');
+    console.log(mediaQuery);
 
     function unlockScrolling() {
       if (!mediaQuery.matches) {
