@@ -67,7 +67,7 @@ export default function Header() {
   // ------------------------------------------------
 
   return (
-    <header className={`header ${!headerVisible ?? 'hidden' : ''}`}>
+    <header className={`header ${!headerVisible ? 'hidden' : ''}`}>
       <div className='header__wrapper | wrapper'>
         <div className="header__branding">
           <img
