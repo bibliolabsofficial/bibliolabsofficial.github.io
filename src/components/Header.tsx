@@ -48,7 +48,7 @@ export default function Header() {
   function handleScroll() {
     const currentScrollPosition = window.scrollY;
 
-    if (!headerLocked) setHeaderViible(currentScrollPosition > scrollPosition);
+    if (!headerLocked) setHeaderVisible(currentScrollPosition > scrollPosition);
 
     setScrollPosition(currentScrollPosition);
   }
