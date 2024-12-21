@@ -58,24 +58,7 @@ export default function Header() {
   const toggleHeaderLocked = () => if (!headerLocked) setHeaderVisible(!headerVisible);
 
   // Toggles hamburger visibility
-  function toggleMenuVisibility() {
-    setMenuOpened(!menuOpened);
-    toggleBodyScrollingEnabled();
-  }
-
-  // Locks body scrolling
-  function toggleBodyScrollingEnabled() {
-   try {
-    if (menuOpened) {
-      document.body.classList.add('scroll-y-locked');
-      return;
-    }
-
-    document.body.classList.remove('scroll-y-locked');
-   } catch (error) {
-     console.log('An arror ocurred:', error.message);
-   }
-  }
+  const toggleMenuVisibility = () => setMenuOpened(!menuOpened);
   // ------------------------------------------------
 
   return (
