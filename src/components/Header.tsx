@@ -13,10 +13,11 @@ export default function Header() {
 
   useEffect(() => {
     const mediaQuery = window.matchMedia('(max-width: 48rem)');
+    const body = document.body;
   
     function unlockScrolling() {
-      if (!mediaQuery.matches) {
-        document.body.classList.remove('scroll-y-locked');
+      if (!mediaQuery.matches && body.classList.includes('scroll-y-locked')) {
+        body.classList.remove('scroll-y-locked');
         setMenuOpened(false);
       }
     }
