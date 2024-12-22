@@ -42,7 +42,10 @@ export default function Header() {
       return;
     }
 
-    body.classList.add('scroll-y-locked');
+    if (menuOpened) {
+      body.classList.add('scroll-y-locked');
+    }
+
     menu?.removeAttribute('inert');
   }, [menuOpened]);
   // ------------------------------------------------
