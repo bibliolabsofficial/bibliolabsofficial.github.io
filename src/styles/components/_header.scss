@@ -213,6 +213,7 @@
     content: '';
     position: absolute;
     inset: 0;
+    z-index: 1;
     background-color: red;
     backdrop-filter: blur(15px);
   }
