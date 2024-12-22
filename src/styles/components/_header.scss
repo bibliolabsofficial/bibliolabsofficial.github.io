@@ -125,6 +125,8 @@
     display: flex;
     gap: 25px;
     list-style-type: none;
+    position: relative;
+    z-index: 2;
 
     @media (max-width: 48rem) {
       min-height: 100vh; // Fallback for browsers that don't support svh
@@ -135,7 +137,6 @@
       padding-inline: 25px 0;
       position: absolute;
       inset: 0 0 0 45%;
-      z-index: 2;
       background-color: var(--clr-neutral-1000-alpha-500);
       backdrop-filter: blur(15px);
       border-left: var(--border-width-small) var(--border-base-style) var(--clr-base-500);
