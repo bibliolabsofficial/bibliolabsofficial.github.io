@@ -12,11 +12,11 @@ export default function Header() {
   const [menuOpened, setMenuOpened] = useState(false);
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia('(max-width: 48rem)');
+    const isMobileSize = window.matchMedia('(max-width: 48rem)').matches;
     const body = document.body;
 
     function unlockBodyScrollY() {
-      if (!mediaQuery.matches) {
+      if (!isMobileSize) {
         body.classList.remove('scroll-y-locked');
         setMenuOpened(false);
       }
@@ -32,21 +32,14 @@ export default function Header() {
   }, [scrollPosition, headerLocked]);
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia('(max-width: 48rem)');
+    const isMobileSize = window.matchMedia('(max-width: 48rem)').matches;
     const menu = document.querySelector('.header__nav-list');
     const body = document.body;
 
-    if (!menuOpened && mediaQuery.matches) {
-      body.classList.remove('scroll-y-locked');
-      menu?.setAttribute('inert', '');
-      return;
+    if (isMobileSize) {
+      body.classList.toggle('scroll-y-locked', menuOpened);
+      menu?.toggleAttribute('inert', !menuOpened);
     }
-
-    if (menuOpened) {
-      body.classList.add('scroll-y-locked');
-    }
-
-    menu?.removeAttribute('inert');
   }, [menuOpened]);
   // ------------------------------------------------
 
