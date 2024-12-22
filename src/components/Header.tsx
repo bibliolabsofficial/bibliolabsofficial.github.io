@@ -1,6 +1,6 @@
 // ------------------- Imports --------------------
 // Hooks
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 // ------------------------------------------------
 
 // --------------- Header Component ---------------
@@ -11,19 +11,38 @@ export default function Header() {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [menuOpened, setMenuOpened] = useState(false);
 
+  const headerControlsRef = useRef<HTMLElement | null>(null);
+  const menuRef = useRef<HTMLElement | null>(null);
+  const bodyRef = useRef<HTMLElement | null>(null);
+  const mainRef = useRef<HTMLElement | null>(null);
+  const footerRef = useRef<HTMLElement | null>(null);
+
+  useEffect(() => {
+    headerControlsRef.current = document.querySelector('.header__controls');
+    menuRef.current = document.querySelector('.header__nav-list');
+    bodyRef.current = document.body;
+    mainRef.current = document.querySelector('main');
+    footerRef.current = document.querySelector('footer');
+  }, []);
+
   /*
     Handles unlocking the body scroll when the window is resized
     and the viewport is larger than 48rem (768px).
   */
   useEffect(() => {
-    const isMobileSize = window.matchMedia('(width <= 48rem)').matches;
-    const body = document.body;
+    const mobileSize = window.matchMedia('(width <= 48rem)');
+    const body = bodyRef.current as HTMLElement;
+    const menu = menuRef.current as HTMLElement;
 
     function unlockBodyScrollY() {
-      if (!isMobileSize) {
+      const bodyScrollYLocked = body.classList.contains('scroll-y-locked');
+
+      if (mobileSize.matches && bodyScrollYLocked) {
         body.classList.remove('scroll-y-locked');
         setMenuOpened(false);
       }
+
+      if (menu) menu.style.transition = 'none';
     }
 
     window.addEventListener('resize', unlockBodyScrollY);
@@ -45,14 +64,26 @@ export default function Header() {
     (viewport width less than or equal to 48rem).
   */
   useEffect(() => {
-    const isMobileSize = window.matchMedia('(width <= 48rem)').matches;
-    const menu = document.querySelector('.header__nav-list');
-    const body = document.body;
+    const mobileSize = window.matchMedia('(width <= 48rem)');
+    const headerControls = headerControlsRef.current as HTMLElement;
+    const body = bodyRef.current as HTMLElement;
+    const menu = menuRef.current as HTMLElement;
+    const main = mainRef.current as HTMLElement;
+    const footer = footerRef.current as HTMLElement;
 
-    if (isMobileSize) {
+    if (menu && mobileSize.matches) {
       body.classList.toggle('scroll-y-locked', menuOpened);
-      /* body.toggleAttribute('inert', menuOpened); */
-      menu?.toggleAttribute('inert', !menuOpened);
+      headerControls.toggleAttribute('inert', menuOpened);
+      menu.toggleAttribute('inert', !menuOpened);
+      main.toggleAttribute('inert', menuOpened);
+      footer.toggleAttribute('inert', menuOpened);
+
+      if (menuOpened) {
+        menu.removeAttribute('style');
+        return;
+      }
+
+      setTimeout(() => menu.style.transition = 'none', 300);
     }
   }, [menuOpened]);
   // ------------------------------------------------
@@ -69,7 +100,7 @@ export default function Header() {
 
   // Toggles the header visibility
   function toggleHeaderLocked() {
-    if (!headerLocked) setHeaderVisible(!headerVisible)
+    if (!headerLocked) setHeaderVisible(!headerVisible);
   };
 
   // Toggles hamburger menu visibility
@@ -121,7 +152,7 @@ export default function Header() {
             </li>
 
             <li className='header__nav-list-item'>
-              <a href="#" className='header__link'>Support us</a>
+              <a href="#" className='header__link'>Premium</a>
             </li>
           </ul>
         </nav>

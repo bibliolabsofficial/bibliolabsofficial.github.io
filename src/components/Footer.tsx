@@ -16,15 +16,32 @@ function Footer() {
           </ul>
 
           <div className="footer__social">
-            <ul className="footer__nav-list">
+            <ul className="footer__nav-list social">
               <li><a href="#"><i className='fa-brands fa-instagram'></i></a></li>
               <li><a href="#"><i className='fa-brands fa-facebook'></i></a></li>
               <li><a href="#"><i className='fa-brands fa-x-twitter'></i></a></li>
             </ul>
 
-            <ul className="footer__nav-list">
-              <li><a href="#"><i className="fa-brands fa-google-play"></i></a></li>
-              <li><a href="#"><i className="fa-brands fa-apple"></i></a></li>
+            <ul className="footer__nav-list apps">
+              <li>
+                <a href="#">
+                  <img
+                    src="../../images/play-store.svg"
+                    alt="Google Play Store"
+                    width={125}
+                  />
+                </a>
+              </li>
+
+              <li>
+                <a href="#">
+                  <img
+                    src="../../images/app-store.svg"
+                    alt="Google Play Store"
+                    width={125}
+                  />
+                </a>
+              </li>
             </ul>
           </div>
         </nav>

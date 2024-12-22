@@ -28,18 +28,32 @@
     a {
       color: var(--clr-neutral-0);
       transition: color var(--transition-time-regular);
-
-      &:hover {
-        color: var(--clr-base-300);
-      }
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     i {
-      font-size: var();
+      font-size: 1.25rem;
       color: var(--clr-base-450);
+      border-radius: 50%;
+      transition: box-shadow var(--transition-time-fast);
+
+      &:hover {
+        box-shadow: 0 0 15px 2px var(--clr-base-500);
+      }
+    }
+
+    &.social {
+      align-items: center;
+    }
+
+    &.apps {
+      margin-left: 15px;
+      gap: 10px;
     }
   }
-  
+
   &__social {
     display: inherit;
     gap: 15px;
@@ -49,7 +63,7 @@
       transition: color var(--transition-time-regular);
 
       &:hover {
-        color: var(--clr-base-400);    
+        color: var(--clr-base-400);
       }
     }
   }
