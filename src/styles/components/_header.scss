@@ -208,4 +208,12 @@
       border-color: var(--clr-base-500);
     }
   }
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: red;
+    backdrop-filter: blur(15px);
+  }
 }
