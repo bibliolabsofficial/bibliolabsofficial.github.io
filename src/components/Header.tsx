@@ -53,7 +53,7 @@ export default function Header() {
     setScrollPosition(currentScrollPosition);
   }
 
-  // Toggles the header lockd state
+  // Toggles the header locked state
   function toggleHeaderLocked() {
     if (!headerLocked) setHeaderVisible(!headerVisible)
   };
