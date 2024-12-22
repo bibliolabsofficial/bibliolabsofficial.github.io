@@ -12,7 +12,7 @@ export default function Header() {
   const [menuOpened, setMenuOpened] = useState(false);
 
   useEffect(() => {
-    const isMobileSize = window.matchMedia('(max-width: 48rem)').matches;
+    const isMobileSize = window.matchMedia('(width <= 48rem)').matches;
     const body = document.body;
 
     function unlockBodyScrollY() {
@@ -32,7 +32,7 @@ export default function Header() {
   }, [scrollPosition, headerLocked]);
 
   useEffect(() => {
-    const isMobileSize = window.matchMedia('(max-width: 48rem)').matches;
+    const isMobileSize = window.matchMedia('(width <= 48rem)').matches;
     const menu = document.querySelector('.header__nav-list');
     const body = document.body;
 
