@@ -59,7 +59,7 @@ export default function Header() {
   };
 
   // Toggles hamburger menu visibility
-  function toggleMenuVisibility = () => setMenuOpened(!menuOpened);
+  const toggleMenuVisibility = () => setMenuOpened(!menuOpened);
   // ------------------------------------------------
 
   return (
