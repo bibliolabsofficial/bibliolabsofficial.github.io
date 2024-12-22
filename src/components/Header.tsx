@@ -16,7 +16,7 @@ export default function Header() {
     and the viewport is larger than 48rem (768px).
   */
   useEffect(() => {
-    const isMobileSize = window.matchMedia('(max-width: 48rem)').matches;
+    const isMobileSize = window.matchMedia('(width <= 48rem)').matches;
     const body = document.body;
 
     function unlockBodyScrollY() {
@@ -35,8 +35,8 @@ export default function Header() {
     when the user scrolls the page.
   */
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', toggleHeaderVisibleOnScroll);
+    return () => window.removeEventListener('scroll', toggleHeaderVisibleOnScroll);
   }, [scrollPosition, headerLocked]);
 
   /*
@@ -45,7 +45,7 @@ export default function Header() {
     (viewport width less than or equal to 48rem).
   */
   useEffect(() => {
-    const isMobileSize = window.matchMedia('(max-width: 48rem)').matches;
+    const isMobileSize = window.matchMedia('(width <= 48rem)').matches;
     const menu = document.querySelector('.header__nav-list');
     const body = document.body;
 
@@ -58,8 +58,8 @@ export default function Header() {
   // ------------------------------------------------
 
   // ------------------ Functions -------------------
-  // Handles header visibility on scroll
-  function handleScroll() {
+  // Toggles header visibility on vertical scroll
+  function toggleHeaderVisibleOnScroll() {
     const currentScrollPosition = window.scrollY;
 
     if (!headerLocked) setHeaderVisible(!(currentScrollPosition > scrollPosition));
@@ -67,12 +67,12 @@ export default function Header() {
     setScrollPosition(currentScrollPosition);
   }
 
-  // Toggles the header lockd state
-  const toggleHeaderLocked = () => {
-    if (!headerLocked) setHeaderVisible(!headerVisible);
+  // Toggles the header visibility
+  function toggleHeaderLocked() {
+    if (!headerLocked) setHeaderVisible(!headerVisible)
   };
 
-  // Toggles hamburger visibility
+  // Toggles hamburger menu visibility
   const toggleMenuVisibility = () => setMenuOpened(!menuOpened);
   // ------------------------------------------------
 

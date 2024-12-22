@@ -121,6 +121,24 @@
     }
   }
 
+  &__hamburger-menu {
+    display: none;
+    font-size: 1.75rem;
+    background-color: transparent;
+    border: none;
+    color: var(--clr-base-400);
+    position: relative;
+    z-index: 1000;
+
+    @media (max-width: 48rem) {
+      display: inline;
+    }
+  }
+
+  &__hamburger-menu[aria-expanded='true'] + &__nav-list {
+    transform: translateX(0);
+  }
+
   &__nav-list {
     display: flex;
     gap: 25px;
@@ -149,26 +167,8 @@
     }
   }
 
-  [aria-expanded='true'] + &__nav-list {
-    transform: translateX(0);
-  }
-
   &__nav-list-item {
     font-weight: var(--fw-bold);
-  }
-
-  &__hamburger-menu {
-    display: none;
-    font-size: 1.75rem;
-    background-color: transparent;
-    border: none;
-    color: var(--clr-base-400);
-    position: relative;
-    z-index: 1000;
-
-    @media (max-width: 48rem) {
-      display: inline;
-    }
   }
 
   &__controls {
