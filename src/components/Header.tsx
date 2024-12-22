@@ -51,7 +51,7 @@ export default function Header() {
 
     if (isMobileSize) {
       body.classList.toggle('scroll-y-locked', menuOpened);
-      body.toggleAttribute('inert', menuOpened);
+      /* body.toggleAttribute('inert', menuOpened); */
       menu?.toggleAttribute('inert', !menuOpened);
     }
   }, [menuOpened]);
