@@ -27,8 +27,8 @@ export default function Header() {
   }, [])
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', toggleHeaderVisibleOnScroll);
+    return () => window.removeEventListener('scroll', toggleHeaderVisibleOnScroll);
   }, [scrollPosition, headerLocked]);
 
   useEffect(() => {
@@ -44,8 +44,8 @@ export default function Header() {
   // ------------------------------------------------
 
   // ------------------ Functions -------------------
-  // Handles header visibility on scroll
-  function handleScroll() {
+  // Toggles header visibility on vertical scroll
+  function toggleHeaderVisibleOnScroll() {
     const currentScrollPosition = window.scrollY;
 
     if (!headerLocked) setHeaderVisible(!(currentScrollPosition > scrollPosition));
@@ -53,13 +53,13 @@ export default function Header() {
     setScrollPosition(currentScrollPosition);
   }
 
-  // Toggles the header locked state
+  // Toggles the header visibility
   function toggleHeaderLocked() {
     if (!headerLocked) setHeaderVisible(!headerVisible)
   };
 
-  // Toggles hamburger visibility
-  const toggleMenuVisibility = () => setMenuOpened(!menuOpened);
+  // Toggles hamburger menu visibility
+  function toggleMenuVisibility = () => setMenuOpened(!menuOpened);
   // ------------------------------------------------
 
   return (
