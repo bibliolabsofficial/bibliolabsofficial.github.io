@@ -8,7 +8,7 @@
   padding: utils.pxToRem(20);
   position: fixed;
   inset: 0 0 auto;
-  z-index: 1;
+  z-index: 2;
   border-bottom: var(--border-width-regular) var(--border-base-style) var(--clr-neutral-700);
   transition: border-bottom-color, transform, var(--transition-time-fast);
 
