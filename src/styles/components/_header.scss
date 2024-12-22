@@ -87,7 +87,7 @@
     border-radius: 50%;
     border: var(--border-width-regular) var(--border-base-style) var(--clr-base-500);
     box-shadow: 0 0 25px var(--clr-base-500);
-  };
+  }
 
   &__link {
     @include utils.fluid-size(0.75rem, 1rem, font-size);
@@ -164,7 +164,7 @@
     z-index: 1000;
 
     @media (max-width: 48rem) {
-      display: inline;;
+      display: inline;
     }
   }
 
