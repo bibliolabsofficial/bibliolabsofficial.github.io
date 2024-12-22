@@ -11,6 +11,10 @@ export default function Header() {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [menuOpened, setMenuOpened] = useState(false);
 
+  /*
+    Handles unlocking the body scroll when the window is resized
+    and the viewport is larger than 48rem (768px).
+  */
   useEffect(() => {
     const isMobileSize = window.matchMedia('(max-width: 48rem)').matches;
     const body = document.body;
@@ -21,16 +25,25 @@ export default function Header() {
         setMenuOpened(false);
       }
     }
-    
+
     window.addEventListener('resize', unlockBodyScrollY);
     return () => window.removeEventListener('resize', unlockBodyScrollY);
-  }, [])
+  }, []);
 
+  /*
+    Handles updating the scroll position and locking the header
+    when the user scrolls the page.
+  */
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, [scrollPosition, headerLocked]);
 
+  /*
+    Handles toggling the body scroll lock and the inert attribute
+    on the menu when the menu is opened or closed, but only on mobile devices
+    (viewport width less than or equal to 48rem).
+  */
   useEffect(() => {
     const isMobileSize = window.matchMedia('(max-width: 48rem)').matches;
     const menu = document.querySelector('.header__nav-list');
@@ -38,6 +51,7 @@ export default function Header() {
 
     if (isMobileSize) {
       body.classList.toggle('scroll-y-locked', menuOpened);
+      body.toggleAttribute('inert', menuOpened);
       menu?.toggleAttribute('inert', !menuOpened);
     }
   }, [menuOpened]);
@@ -55,7 +69,7 @@ export default function Header() {
 
   // Toggles the header lockd state
   const toggleHeaderLocked = () => {
-    if (!headerLocked) setHeaderVisible(!headerVisible)
+    if (!headerLocked) setHeaderVisible(!headerVisible);
   };
 
   // Toggles hamburger visibility
