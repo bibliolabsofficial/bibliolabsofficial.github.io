@@ -54,7 +54,7 @@ export default function Header() {
   }
 
   // Toggles the header lockd state
-  const toggleHeaderLocked = () => {
+  function toggleHeaderLocked() {
     if (!headerLocked) setHeaderVisible(!headerVisible)
   };
 
