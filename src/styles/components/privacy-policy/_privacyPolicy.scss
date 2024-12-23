@@ -1,3 +1,5 @@
+@use '../../utils' as utils';
+
 .privacy {
   padding-block: 6.25rem 50px;
   
@@ -7,6 +9,7 @@
   }
 
   p, ul {
+    @includes utils.fluid-size(1rem, 0.875rem, font-size);
     padding-block: 10px;
   }
 }
