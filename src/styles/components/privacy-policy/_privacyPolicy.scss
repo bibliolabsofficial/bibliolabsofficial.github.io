@@ -9,7 +9,7 @@
   }
 
   p, ul {
-    @includes utils.fluid-size(1rem, 0.875rem, font-size);
+    @include utils.fluid-size(1rem, 0.875rem, font-size);
     padding-block: 10px;
   }
 }
