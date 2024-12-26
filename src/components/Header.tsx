@@ -33,12 +33,18 @@ export default function Header() {
     const mobileSize = window.matchMedia('(width <= 48rem)');
     const body = bodyRef.current as HTMLElement;
     const menu = menuRef.current as HTMLElement;
+    const headerControls = headerControlsRef.current as HTMLElement;
+    const main = mainRef.current as HTMLElement;
+    const footer = footerRef.current as HTMLElement;
 
     function unlockBodyScrollY() {
-      const bodyScrollYLocked = body.classList.contains('scroll-y-locked');
-
-      if (mobileSize.matches && bodyScrollYLocked) {
+      if (!mobileSize.matches) {
         body.classList.remove('scroll-y-locked');
+        headerControls.removeAttribute('inert');
+        menu.removeAttribute('inert');
+        main.removeAttribute('inert');
+        footer.removeAttribute('inert');
+
         setMenuOpened(false);
       }
 
