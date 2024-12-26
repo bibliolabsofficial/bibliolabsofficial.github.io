@@ -1,4 +1,4 @@
-@use '../utils/' as utils;
+@use '../../utils/' as utils;
 
 .hero {
   min-height: 100vh; // Fallback for browsers that don't support svh
