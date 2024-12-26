@@ -1,0 +1,15 @@
+@use '../../utils' as utils;
+
+.privacy {
+  padding-block: 6.25rem 50px;
+  
+  &__title, h2, h3 {
+    font-family: var(--ff-primary);
+    color: var(--clr-base-300);
+  }
+
+  p, ul {
+    @include utils.fluid-size(1rem, 0.875rem, font-size);
+    padding-block: 10px;
+  }
+}
