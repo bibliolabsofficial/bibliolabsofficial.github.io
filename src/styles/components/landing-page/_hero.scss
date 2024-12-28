@@ -56,14 +56,15 @@
   &__btns {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 5px;
   }
 
   &__btn {
+    padding: 5px 8px;
     border: var(--border-width-regular) var(--border-base-style) var(--clr-base-500);
-    border-radius: 10px;
+    border-radius: 5px;
     
-    &:last-child {
+    :last-child {
       border-color: var(--clr-neutral-0);
       color: var(--clr-neutral-0);
     }
