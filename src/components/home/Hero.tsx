@@ -4,6 +4,7 @@ export default function Hero() {
       <div className="hero__wrapper | wrapper">
         <h2 className="hero__title">The Art of War</h2>
         <h3 className="hero__subtitle">Sun Tzu</h3>
+        
         <p className='hero__description'>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum
           reiciendis sed error doloribus ex accusamus dicta excepturi nesciunt,
@@ -13,6 +14,11 @@ export default function Hero() {
           dicta laboriosam soluta sapiente ipsum unde? Facilis vel natus
           asperiores in deserunt eos explicabo ea quam fuga nostrum.
         </p>
+        
+        <div className='hero__btns'>
+          <a className='hero__btn'>Ler no app</a>
+          <a className='hero__btn'>Saiba mais</a>
+        </div>
       </div>
     </section>
   );
