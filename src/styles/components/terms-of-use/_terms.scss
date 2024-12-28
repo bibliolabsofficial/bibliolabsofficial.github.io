@@ -1,6 +1,6 @@
 @use '../../utils' as utils;
 
-.privacy {
+.terms {
   padding-block: 7.5rem 50px;
 
   &__title, h2, h3 {
@@ -8,14 +8,13 @@
     color: var(--clr-base-400);
   }
 
+  h2 {
+    margin-bottom: 10px;
+  }
+
   p, ul {
     @include utils.fluid-size(1rem, 0.875rem, font-size);
     padding-block: 10px;
-  }
-
-  ul {
-    list-style-type:initial;
-    margin-left: 25px;
   }
 
   a {

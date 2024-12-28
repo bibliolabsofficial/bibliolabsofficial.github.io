@@ -1,0 +1,22 @@
+---
+// Components
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header";
+import Hero from "../../components/Hero";
+import AppShowcase from "../../components/AppShowcase";
+import Footer from "../../components/Footer";
+
+// Styles
+import "../../styles/main.scss";
+---
+
+<Layout title="Início | Bibliolabs">
+  <Header client:load />
+
+  <main>
+    <Hero />
+    <AppShowcase />
+  </main>
+
+  <Footer />
+</Layout>
