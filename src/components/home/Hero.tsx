@@ -16,11 +16,11 @@ export default function Hero() {
         </p>
         
         <div className='hero__btns'>
-          <button class='hero__btn' type='button'>
+          <button className='hero__btn' type='button'>
             <a href='#'>Read on app</a>
           </button>
           
-          <button class='hero__btn' type='button'>
+          <button className='hero__btn' type='button'>
             <a href='#'>Learn more</a>
           </button>
         </div>
