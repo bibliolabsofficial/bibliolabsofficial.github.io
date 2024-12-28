@@ -73,7 +73,7 @@
 
     &:hover {
       --txt-clr: var(--clr-neutral-1000);
-      background-color: var(--clr-base-500);
+      background-color: var(--clr-base-400);
     }
 
     &:last-child {
@@ -81,6 +81,7 @@
       border-color: var(--clr-neutral-0);
 
       &:hover {
+        --txt-clr: var(--clr-neutral-1000);
         background-color: var(--clr-neutral-0);
       }
     }
