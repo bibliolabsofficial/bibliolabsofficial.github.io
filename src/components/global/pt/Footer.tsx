@@ -4,14 +4,14 @@ function Footer() {
       <div className="footer__wrapper | wrapper">
         <nav>
           <ul className="footer__nav-list">
-            <li><a href="/pt/">Início</a></li>
+            <li><a href="/pt">Início</a></li>
             <li><a href="#">Sobre</a></li>
             <li><a href="#">Premium</a></li>
           </ul>
 
           <ul className="footer__nav-list">
             <li><a href="#">Novidades</a></li>
-            <li><a href="#">Privacidade</a></li>
+            <li><a href="/pt/politica-de-privacidade">Privacidade</a></li>
             <li><a href="#">Contato</a></li>
           </ul>
 
