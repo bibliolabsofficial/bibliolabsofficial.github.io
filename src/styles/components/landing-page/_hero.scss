@@ -62,12 +62,15 @@
 
   &__btn {
     padding: 5px 8px;
-    border: var(--border-width-regular) var(--border-base-style) var(--clr-neutral-0);
+    border: var(--border-width-regular) var(--border-base-style) var(--clr-base-500);
     border-radius: 5px;
 
-    &:first-child {
-      border-color: var(--clr-base-500);
-      color: var(--clr-base-400);
+    &:last-child {
+      border-color: var(--clr-neutral-0);
+
+      a {
+        color: var(--clr-neutral-0);
+      }
     }
   }
 
