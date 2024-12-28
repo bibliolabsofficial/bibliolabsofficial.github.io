@@ -65,7 +65,7 @@
     border: var(--border-width-regular) var(--border-base-style) var(--clr-neutral-0);
     border-radius: 5px;
 
-    &.highlight {
+    &:first-child {
       border-color: var(--clr-base-500);
       color: var(--clr-base-400);
     }
