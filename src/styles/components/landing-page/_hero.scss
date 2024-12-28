@@ -64,7 +64,7 @@
     border: var(--border-width-regular) var(--border-base-style) var(--clr-base-500);
     border-radius: 5px;
     
-    :last-child {
+    &:last-child {
       border-color: var(--clr-neutral-0);
       color: var(--clr-neutral-0);
     }
