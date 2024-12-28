@@ -16,12 +16,12 @@ export default function Hero() {
         </p>
         
         <div className='hero__btns'>
-          <button type='button'>
-            <a href='#' className='hero__btn'>Read on app</a>
+          <button class='hero__btn' type='button'>
+            <a href='#'>Read on app</a>
           </button>
           
-          <button type='button'>
-            <a href='#' className='hero__btn'>Learn more</a>
+          <button class='hero__btn' type='button'>
+            <a href='#'>Learn more</a>
           </button>
         </div>
       </div>
