@@ -59,6 +59,16 @@
     gap: 10px;
   }
 
+  &__btn {
+    border: var(--border-width-regular) var(--border-base-style) var(--clr-base-500);
+    border-radius: 10px;
+    
+    &:last-child {
+      border-color: var(--clr-neutral-0);
+      color: var(--clr-neutral-0);
+    }
+  }
+
   @media (min-width: 48rem) {
     background-position: 25%;
   }
