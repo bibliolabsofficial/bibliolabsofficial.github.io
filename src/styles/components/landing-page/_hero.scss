@@ -53,6 +53,12 @@
     color: var(--clr-neutral-200);
   }
 
+  &__btns {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
   @media (min-width: 48rem) {
     background-position: 25%;
   }
