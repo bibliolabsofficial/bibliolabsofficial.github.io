@@ -138,7 +138,7 @@ export default function Header() {
             onClick={toggleMenuVisibility}
           >
             <span className='sr-only'>menu</span>
-            <span className="fa fa-bars" aria-hidden="true"></span>
+            <span className=className={`fa fa-${menuOpened ? 'x' : 'bars'}`} aria-hidden="true"></span>
           </button>
 
           <ul
