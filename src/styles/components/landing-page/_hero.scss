@@ -61,9 +61,9 @@
   }
 
   &__btn {
-    --txt-clr: var(--clr-base-500);
+    --txt-clr: var(--clr-base-400);
     padding: 5px 8px;
-    border: var(--border-width-regular) var(--border-base-style) var(--clr-base-500);
+    border: var(--border-width-regular) var(--border-base-style) var(--clr-base-400);
     border-radius: 5px;
     font-weight: bold;
 
@@ -77,6 +77,7 @@
     }
 
     &:last-child {
+      --txt-clr: var(--clr-neutral-0);
       border-color: var(--clr-neutral-0);
 
       &:hover {
