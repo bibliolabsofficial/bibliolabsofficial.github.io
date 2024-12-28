@@ -61,16 +61,18 @@
   }
 
   &__btn {
+    --btn-clr: var(--clr-base-500);
     padding: 5px 8px;
-    border: var(--border-width-regular) var(--border-base-style) var(--clr-base-500);
+    border: var(--border-width-regular) var(--border-base-style) var(--btn-clr);
     border-radius: 5px;
 
-    &:last-child {
-      border-color: var(--clr-neutral-0);
+    a {
+      color: var(--btn-clr);
+    }
 
-      a {
-        color: var(--clr-neutral-0);
-      }
+    &:last-child {
+      --btn-clr: var(--clr-neutral-0);
+      border-color: var(--btn-clr);
     }
   }
 
