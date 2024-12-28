@@ -146,7 +146,7 @@ export default function Header() {
             id='primary-navigation'
           >
             <li className='header__nav-list-item'>
-              <a href="/" className='header__link | active'>Home</a>
+              <a href="/" className='header__link | active'>Início</a>
             </li>
 
             <li className='header__nav-list-item'>
@@ -154,7 +154,7 @@ export default function Header() {
             </li>
 
             <li className='header__nav-list-item'>
-              <a href="#" className='header__link'>About</a>
+              <a href="#" className='header__link'>Sobre</a>
             </li>
 
             <li className='header__nav-list-item'>
