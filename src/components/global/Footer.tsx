@@ -4,9 +4,9 @@ function Footer() {
       <div className="footer__wrapper | wrapper">
         <nav>
           <ul className="footer__nav-list">
-            <li><a href="#">Home</a></li>
+            <li><a href="/">Home</a></li>
             <li><a href="#">About</a></li>
-            <li><a href="#">Support us</a></li>
+            <li><a href="#">Premium</a></li>
           </ul>
 
           <ul className="footer__nav-list">
