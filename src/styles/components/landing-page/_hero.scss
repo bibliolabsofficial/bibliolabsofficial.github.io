@@ -66,6 +66,7 @@
     border: var(--border-width-regular) var(--border-base-style) var(--clr-base-400);
     border-radius: 5px;
     font-weight: bold;
+    transition: color var(--transition-time-regular), background-color var(--transition-time-regular);
 
     a {
       color: var(--txt-clr);
