@@ -4,15 +4,15 @@ function Footer() {
       <div className="footer__wrapper | wrapper">
         <nav>
           <ul className="footer__nav-list">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Support us</a></li>
+            <li><a href="#">Início</a></li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Premium</a></li>
           </ul>
 
           <ul className="footer__nav-list">
-            <li><a href="#">News</a></li>
-            <li><a href="#">Privacy</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#">Novidades</a></li>
+            <li><a href="#">Privacidade</a></li>
+            <li><a href="#">Contato</a></li>
           </ul>
 
           <div className="footer__social">
