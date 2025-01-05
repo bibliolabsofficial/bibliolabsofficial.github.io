@@ -191,6 +191,20 @@
     list-style-type: none;
     position: relative;
     z-index: 2;
+    padding-block: 6px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 3px;
+      scale: var(--indicator-width, 0.2) 1;
+      translate: var(--indicator-left, 0) 0;
+      transform-origin: left;
+      background-color: var(--clr-base-500);
+    }
 
     @media (max-width: 48rem) {
       min-height: 100vh; // Fallback for browsers that don't support svh
@@ -203,7 +217,7 @@
       inset: 0 0 0 45%;
       background-color: var(--clr-neutral-1000-alpha-500);
       backdrop-filter: blur(15px);
-      border-left: var(--border-width-small) var(--border-base-style) var(--clr-base-500);
+      border-left: var(--border-width-regular) var(--border-base-style) var(--clr-base-500);
       border-top-left-radius: 25px;
       border-bottom-left-radius: 25px;
       box-shadow: -15px 0 15px var(--clr-neutral-1000-alpha-500);

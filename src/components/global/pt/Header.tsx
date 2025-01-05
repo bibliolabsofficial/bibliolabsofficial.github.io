@@ -111,6 +111,11 @@ export default function Header() {
 
   // Toggles hamburger menu visibility
   const toggleMenuVisibility = () => setMenuOpened(!menuOpened);
+
+  // Moves header active link underline indicator
+  function moveHeaderIndicator(newLink: any) {
+
+  }
   // ------------------------------------------------
 
   return (
