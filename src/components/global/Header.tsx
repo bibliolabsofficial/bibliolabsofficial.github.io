@@ -130,7 +130,7 @@ export default function Header() {
         </div>
 
         <nav>
-          <button
+         <button
             className="header__hamburger-menu"
             aria-controls="primary-navigation"
             type="button"
@@ -138,7 +138,7 @@ export default function Header() {
             onClick={toggleMenuVisibility}
           >
             <span className='sr-only'>menu</span>
-            <span className={`fa fa-${menuOpened ? 'x' : 'bars'}`} aria-hidden="true"></span>
+            <span className={`header__hamburger-icon ${menuOpened ? 'active' : ''}`} aria-hidden="true"></span>
           </button>
 
           <ul
