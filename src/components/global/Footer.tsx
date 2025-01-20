@@ -32,16 +32,6 @@ function Footer() {
                   />
                 </a>
               </li>
-
-              <li>
-                <a href="#">
-                  <img
-                    src="../../images/app-store.svg"
-                    alt="Google Play Store"
-                    width={125}
-                  />
-                </a>
-              </li>
             </ul>
           </div>
         </nav>
