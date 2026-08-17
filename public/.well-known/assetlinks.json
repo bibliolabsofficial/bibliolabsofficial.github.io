@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.bibliolabs.bibliophile",
+      "sha256_cert_fingerprints": [
+        "27:80:69:1D:5F:94:3B:54:3A:BB:6C:21:07:4A:2C:50:5F:C7:48:2A:92:96:6C:64:47:59:1F:FD:45:08:F4:EF"
+      ]
+    }
+  }
+]
