@@ -124,8 +124,8 @@ export default function Header() {
         <div className="header__branding">
           <img
             className='header__logo'
-            src='../../images/icon.jpg'
-            alt='bibliolabs logo'
+            src='../../images/icon.png'
+            alt='bibliolab logo'
           />
 
           <div className="header__title-wrapper">

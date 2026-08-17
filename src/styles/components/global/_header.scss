@@ -83,7 +83,7 @@
   }
 
   &__logo {
-    @include utils.fluid-size(2.5rem, 3.125rem, width);
+    @include utils.fluid-size(2.5rem, 3.5rem, width);
     height: auto;
     border-radius: 50%;
     border: var(--border-width-regular) var(--border-base-style) var(--clr-base-500);

@@ -1,7 +1,10 @@
 {
   "recommendations": [
     "astro-build.astro-vscode",
-    "editorconfig.editorconfig"
+    "editorconfig.editorconfig",
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "nicovy.symbolsnicovy"
   ],
   "unwantedRecommendations": []
 }
