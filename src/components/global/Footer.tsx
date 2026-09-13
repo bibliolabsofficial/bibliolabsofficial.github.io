@@ -1,25 +1,49 @@
 function Footer() {
   return (
-    <footer className='footer'>
+    <footer className="footer">
       <div className="footer__wrapper | wrapper">
         <nav>
           <ul className="footer__nav-list">
-            <li><a href="/">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Premium</a></li>
+            <li>
+              <a href="/">Home</a>
+            </li>
+            <li>
+              <a href="#">About</a>
+            </li>
+            <li>
+              <a href="#">Premium</a>
+            </li>
           </ul>
 
           <ul className="footer__nav-list">
-            <li><a href="#">News</a></li>
-            <li><a href="#">Privacy</a></li>
-            <li><a href="#">Contact</a></li>
+            <li>
+              <a href="#">News</a>
+            </li>
+            <li>
+              <a href="/privacy-policy">Privacy</a>
+            </li>
+            <li>
+              <a href="/delete-account">Delete account</a>
+            </li>
           </ul>
 
           <div className="footer__social">
             <ul className="footer__nav-list social">
-              <li><a href="#"><i className='fa-brands fa-instagram'></i></a></li>
-              <li><a href="#"><i className='fa-brands fa-facebook'></i></a></li>
-              <li><a href="#"><i className='fa-brands fa-x-twitter'></i></a></li>
+              <li>
+                <a href="#">
+                  <i className="fa-brands fa-instagram"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i className="fa-brands fa-facebook"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i className="fa-brands fa-x-twitter"></i>
+                </a>
+              </li>
             </ul>
 
             <ul className="footer__nav-list apps">
@@ -37,7 +61,9 @@ function Footer() {
         </nav>
 
         <div className="footer__copyright">
-          <p>&copy; 2026 | <span>Bibliolabs</span></p>
+          <p>
+            &copy; 2026 | <span>Bibliolabs</span>
+          </p>
         </div>
       </div>
     </footer>

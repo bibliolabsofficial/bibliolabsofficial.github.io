@@ -1,0 +1,95 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/global/Header";
+import Footer from "../components/global/Footer";
+
+import "../styles/main.scss";
+---
+
+<Layout title="Delete Your Account · Bibliolab">
+  <Header client:load />
+
+  <main>
+    <section class="delete-account | wrapper">
+      <p class="delete-account__eyebrow">Account &amp; privacy</p>
+      <h1 class="delete-account__title">Delete your Bibliolab account</h1>
+      <p class="delete-account__intro">
+        You can permanently delete your Bibliolab account and associated data
+        directly in the app or by contacting our support team by email.
+      </p>
+
+      <div class="delete-account__notice">
+        <strong>Before you continue:</strong>
+        Account deletion is permanent. Your profile, reading activity, lists, and
+        other account data may not be recoverable after the request is completed.
+        Deleting your Bibliolab account does not automatically cancel a subscription
+        purchased through Apple or Google; cancel that subscription through the store
+        where you purchased it.
+      </div>
+
+      <h2>Option 1: Delete through the app</h2>
+      <ol>
+        <li>Open Bibliolab and sign in to the account you want to delete.</li>
+        <li>Open your profile or account settings.</li>
+        <li>
+          Select <strong>Delete account</strong> and follow the confirmation steps.
+        </li>
+      </ol>
+
+      <h2>Option 2: Request deletion by email</h2>
+      <p>
+        Send your request to
+        <a
+          href="mailto:bibliolabsofficial@gmail.com?subject=Bibliolab%20account%20deletion%20request"
+          >bibliolabsofficial@gmail.com</a
+        >. Use the subject line <strong
+          >Bibliolab account deletion request</strong
+        >
+        and include the following information:
+      </p>
+
+      <ul>
+        <li>The email address associated with your Bibliolab account.</li>
+        <li>Your Bibliolab display name or username, if you have one.</li>
+        <li>How you sign in, such as email, Google, or Apple.</li>
+        <li>
+          Any non-sensitive account detail that helps us locate the account,
+          such as your approximate sign-up date or the title of a saved book.
+        </li>
+      </ul>
+
+      <div class="delete-account__verification">
+        <h3>How we verify ownership</h3>
+        <p>
+          The strongest and simplest proof of ownership is sending the request
+          from the email address registered to your Bibliolab account. We may
+          reply to that address to confirm the request before deleting anything.
+        </p>
+        <p>
+          If you no longer have access to that email address, tell us in your
+          request. We may ask for additional non-sensitive information that
+          matches the account before we can proceed. For your protection, never
+          send us your password, one-time codes, recovery codes, or complete
+          payment-card details.
+        </p>
+      </div>
+
+      <h2>What happens next</h2>
+      <p>
+        We will review the request, contact you if ownership confirmation is
+        needed, and confirm by email when the deletion has been completed. If
+        you only want to stop emails or cancel a subscription, mention that in
+        your message instead of requesting account deletion.
+      </p>
+
+      <p class="delete-account__contact">
+        Questions? Contact
+        <a href="mailto:bibliolabsofficial@gmail.com"
+          >bibliolabsofficial@gmail.com</a
+        >.
+      </p>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

@@ -1,0 +1,84 @@
+@use "../../utils" as utils;
+
+.delete-account {
+  max-width: 860px;
+  padding-block: 7.5rem 5rem;
+
+  &__eyebrow {
+    color: var(--clr-base-300);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+  }
+
+  &__title,
+  h2,
+  h3 {
+    color: var(--clr-base-400);
+    font-family: var(--ff-primary);
+  }
+
+  &__title {
+    margin-bottom: 1rem;
+  }
+
+  &__intro {
+    font-size: 1.15rem;
+    max-width: 42rem;
+  }
+
+  &__notice,
+  &__verification {
+    border-left: 4px solid var(--clr-base-300);
+    margin-block: 2rem;
+    padding: 1rem 1.25rem;
+  }
+
+  &__notice {
+    background: var(--clr-neutral-900);
+  }
+
+  &__verification {
+    background: var(--clr-base-900);
+  }
+
+  h2 {
+    font-size: clamp(1.35rem, 2.5vw, 1.8rem);
+    margin-top: 2.75rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    margin-top: 0;
+  }
+
+  p,
+  ol,
+  ul {
+    @include utils.fluid-size(1rem, 0.925rem, font-size);
+    line-height: 1.7;
+    padding-block: 0.5rem;
+  }
+
+  ol,
+  ul {
+    margin-left: 1.5rem;
+  }
+
+  li {
+    padding-left: 0.35rem;
+  }
+
+  a {
+    color: var(--clr-base-300);
+    font-weight: 700;
+  }
+
+  &__contact {
+    border-top: 1px solid var(--clr-neutral-700);
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+  }
+}
